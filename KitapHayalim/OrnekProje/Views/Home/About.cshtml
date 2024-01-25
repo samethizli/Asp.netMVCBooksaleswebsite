@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar ================================================== -->
+            <div id="sidebar" class="span3">
+                @Html.Action("Summary", "Cart")
+
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+
+                    @Html.Action("_CategoryList", "Category")
+                </ul>
+
+                <br />
+                @Html.Action("FeaturedProducList", "Home")
+            </div>
+            <!-- Sidebar end=============================================== -->
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Anasayfa</a> <span class="divider">/</span></li>
+                    <li class="active">Hakkında</li>
+                </ul>
+                <h3> Hakkında </h3>
+                <hr class="soft" />
+                <h6>
+                    Biz, kitap tutkunlarının ihtiyaçlarını karşılamak ve okuma deneyimlerini zenginleştirmek amacıyla kurulan bir e-ticaret platformuyuz. Kitaplara olan sevgimiz ve edindiğimiz deneyimlerle, herkesin erişebileceği geniş bir kitap koleksiyonunu sunmak için buradayız.
+                    <br /><br />
+                    Misyonumuz, okuma alışkanlıklarını teşvik etmek, bilgiyi yaymak ve insanları yeni dünyalar keşfetmeye teşvik etmektir. Okumak, hem eğlence hem de kişisel gelişim için önemli bir araçtır ve bu nedenle sunduğumuz kitapları seçerken çeşitliliği ve kaliteyi ön planda tutuyoruz.
+                    <br /><br />
+                    Kaliteli yayınları ve geniş bir tür yelpazesini müşterilerimize sunmanın yanı sıra, kendimizi müşteri memnuniyetine adadık. Profesyonel ve hızlı hizmetimizle müşterilerimize en iyi alışveriş deneyimini sunmayı hedefliyoruz. Ekibimiz, kitap seçimi, sipariş işleme ve müşteri hizmetleri konusunda deneyimli ve tutkulu kişilerden oluşur.
+                    <br /><br />
+                    Amacımız, her müşteriye, ilgi alanlarına ve ihtiyaçlarına uygun kitapları bulabilme imkanı sağlamaktır. Kurgu, klasikler, bilim kurgu, girişimcilik, tarih, biyografi ve daha fazlası gibi geniş bir yelpazede kitapları bulabileceğiniz bir platform olarak, herkesin okuma zevkini tatmin etmek için çalışıyoruz.
+                    <br /><br />
+                    Bize güvenebilirsiniz. Müşterilerimize kaliteli hizmet sunmak ve en iyi fiyatlarla kitaplar sağlamak için büyük bir özveriyle çalışıyoruz. Güvenli ödeme seçenekleri ve hızlı kargo hizmetimizle, müşterilerimizin memnuniyetini sağlamak en önemli önceliğimizdir.
+                    <br /><br />
+                    Sizleri okuma dünyasına adım atmaya, yeni maceralar keşfetmeye ve bilgiyle dolu bir yolculuğa davet ediyoruz. Kitaplarla dolu bir yaşamın keyfini çıkarın ve her dönemden yazarların eserlerine ulaşarak düşünce dünyanızı genişletin.
+                    <br /><br />
+                    Bizimle birlikte, kitap tutkusunu paylaşan bir topluluğun bir parçası olmanızı dileriz. Sizin için doğru kitabı bulmak ve size özel bir okuma deneyimi sunmak için buradayız. Teşekkür ederiz, bize güvendiğiniz için minnettarız.
+                    <br /><br />
+                    Kitaplara olan tutkumuzla,
+                    <br />
+                    Kitap Hayalim
+                </h6>
+
+             
+
+            </div>
+        </div>
+    </div>
+</div>

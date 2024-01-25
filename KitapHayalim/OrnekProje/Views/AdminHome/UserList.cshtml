@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "UserList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model List<KitapHayalim.Identity.ApplicationUser>
+<div class="row">
+    <div class="col-xs-12">
+
+        <!-- /.box -->
+        <div class="box">
+
+            <!-- /.box-header -->
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Adı</th>
+                            <th>Soyadı</th>
+                            <th>Kullanıcı Adı</th>
+                            <th>Email</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.Name</td>
+                                <td>@user.Surname</td>
+                                <td>@user.UserName</td>
+                                <td>@user.Email</td>
+                                <td>
+                                    @Html.ActionLink("Düzenle", "EditUser", new { id = user.Id }, new { @class = "btn-edit" })
+                                    |
+                                    @Html.ActionLink("Sil", "DeleteUser", new { id = user.Id }, new { @class = "btn-delete" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.col -->
+</div>

@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar ================================================== -->
+            <div id="sidebar" class="span3">
+                @Html.Action("Summary", "Cart")
+
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+
+                    @Html.Action("_CategoryList", "Category")
+                </ul>
+
+                <br />
+                @Html.Action("FeaturedProducList", "Home")
+            </div>
+            <!-- Sidebar end=============================================== -->
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Anasayfa</a> <span class="divider">/</span></li>
+                    <li class="active">İletişim</li>
+                </ul>
+                <h3> İletişim </h3>
+                <hr class="soft" />
+                <h6>
+                    Eğer herhangi bir sorunuz, öneriniz veya yardım ihtiyacınız varsa, size yardımcı olmak için buradayız. İletişim kurmanın kolay ve hızlı bir yolunu sunmak için çeşitli iletişim kanallarını kullanabilirsiniz.
+                </h6>
+                <br />
+                <h6>
+                    Müşteri Hizmetleri:
+                    Eğer müşteri hizmetleri ekibimizle doğrudan iletişim kurmak isterseniz, aşağıdaki iletişim bilgilerini kullanabilirsiniz:
+                </h6>
+                <br />
+                <h6>
+                    Telefon: +90-555-444-3333
+                    E-posta: info@KitapHayalim.com
+                    Çalışma Saatleri: Pazartesi-Cuma, 09:00-18:00
+                    Sosyal Medya:
+                    Bizi sosyal medya platformlarında takip ederek, güncel haberleri, yeni kitapları ve özel kampanyaları kaçırmazsınız.
+                </h6>
+                <br />
+                <h6>
+                    Facebook: [facebook.com/KitapHayalim]
+                    Twitter: [twitter.com/KitapHayalim]
+                    Instagram: [instagram.com/KitapHayalim]
+                </h6>
+                <br />
+                <h6>
+                    Adres:
+                    Eğer fiziksel olarak bizi ziyaret etmek isterseniz, aşağıdaki adresimizi kullanabilirsiniz:
+                    Kitap Hayalim
+                    Yenibosna Merkez Mahallesi Cemal Ulusoy Caddesi No:43 Bahçelievler/İstanbul
+                </h6>
+                <br />
+                <h6>
+                    Size en iyi hizmeti sunabilmek için, iletişim kanallarımızı düzenli olarak kontrol ediyor ve size en kısa sürede geri dönüş yapıyoruz. Müşteri memnuniyeti bizim için önemlidir ve size yardımcı olmak için buradayız.
+                </h6>
+                <br />
+                <h6>
+                    Bize duyduğunuz ilgi ve desteğiniz için teşekkür ederiz.
+                </h6>
+                <br />
+                <h6>
+                    <b>
+                        Saygılarımızla,
+                        Kitap Hayalim
+                    </b>
+                </h6>
+                <br />
+                <div style="overflow:hidden;width: 700px;position: relative;"><iframe width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Yenibosna%20Merkez%20Mahallesi%20Cemal%20Ulusoy%20Caddesi%20No%3A43%20Bah%C3%A7elievler%2F%C4%B0stanbul+(Title)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/">Embed Google Maps</a> & <a href="https://nouc.se/">lån utan uc med betalningsanmärkningar</a></small></div>
+                <style>
+                    #gmap_canvas img {
+                        max-width: none !important;
+                        background: none !important
+                    }
+                </style></div><br />
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+﻿@using KitapHayalim.Entity
+@model Product
+@{
+    ViewBag.Title = "ProductDetails";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar ================================================== -->
+            <div id="sidebar" class="span3">
+                @Html.Action("Summary", "Cart")
+
+
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+
+
+
+                    @Html.Action("_CategoryList", "Category")
+                </ul>
+                <br>
+                @Html.Action("FeaturedProducList", "Home")
+            </div>
+            <!-- Sidebar end=============================================== -->
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="/Home">Anasayfa</a> <span class="divider">/</span></li>
+                    <li><a href="">Ürün</a> <span class="divider">/</span></li>
+                    <li class="active">Detay</li>
+                </ul>
+
+                <div class="row">
+
+                    <div id="gallery" class="span3">
+                        <br />
+                        <a href="~/Content/Images/@Model.Image" title="">
+                            <img src="~/Content/Images/@Model.Image" style="width:100%;" alt="">
+
+                        </a>
+                    </div>
+                    <div class="span6">
+                        <ul id="productDetail" class="nav nav-tabs">
+                            <li class="active"><a href="#home" data-toggle="tab">Ürün Detay</a></li>
+
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade active in" id="home">
+                                <h4>Ürün Bilgileri</h4>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr class="techSpecRow"><th colspan="2">Ürün Detay</th></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Yayıncı: </td><td class="techSpecTD2">@Model.Publisher</td></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Yazar: </td><td class="techSpecTD2">@Model.Author</td></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Adı: </td><td class="techSpecTD2">@Model.Name</td></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Açıklama :</td><td class="techSpecTD2">@Model.Description</td></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Sayfa Sayısı :</td><td class="techSpecTD2">@Model.Pages</td></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Fiyat:</td><td class="techSpecTD2"> @Model.Price (₺)</td></tr>
+                                        <tr class="techSpecRow"><td class="techSpecTD1">Adet:</td><td class="techSpecTD2"> @Model.Stock</td></tr>
+                                        <tr class="techSpecRow">
+                                            <td class="techSpecTD1"></td>
+                                            <td class="techSpecTD2">
+                                                <div style="float:right;">
+                                                    @using (Html.BeginForm("AddToCart", "Cart"))
+                                                    {
+                                                        @Html.HiddenFor(i => i.Id)
+
+                                                        <button type="submit" class="btn btn-large btn-primary pull-right"> Sepete ekle <i class="icon-shopping-cart"></i></button>
+                                                    }
+                                                </div>
+
+                                                <div style="float:left;"><a href="/Comment/Create/@Model.Id" class="btn btn-large btn-primary pull-right"><i class="glyphicon-comment"></i>Yorum Yap</a></div>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="row" style="margin-top:10px;">
+                    <table class="table table-bordered" style="width:100%">
+                        <tbody>
+                            <tr class="techSpecRow">
+                                <th colspan="2">Yorumlar</th>
+                            </tr>
+                            <tr class="techSpecRow">
+                                <th>Kullanıcı Adı</th>
+                                <th>Yorum</th>
+                            </tr>
+                            @if (ViewBag.Comments.Count == 0)
+                            {
+                                <tr class="techSpecRow">
+                                    <td colspan="2">Henüz yorum bulunmamaktadır.</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                foreach (var item in (List<Comment>)ViewBag.Comments)
+                                {
+                                    <tr class="techSpecRow">
+                                        <td class="techSpecTD1" colspan="1" style="width: 30%">
+                                            <img src="~/Content/Images/iti_11.png" alt="User Avatar" class="mg-b-2 user-avatar">
+                                            <strong>@item.Username</strong>
+                                        </td>
+                                        <td class="techSpecTD2" colspan="1" style="width: 70%">@item.Description</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+
+                </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+

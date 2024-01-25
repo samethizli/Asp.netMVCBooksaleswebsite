@@ -1,0 +1,30 @@
+﻿@model KitapHayalim.Identity.ApplicationUser
+
+@{
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditUser", "AdminHome", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="surname">Surname</label>
+        @Html.TextBoxFor(model => model.Surname, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+}

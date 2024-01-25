@@ -1,0 +1,62 @@
+﻿@model KitapHayalim.Entity.Comment
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+
+        <!-- /.box -->
+        <div class="box">
+
+            <!-- /.box-header -->
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Yorum ID</th>
+                            <th>Kullanıcı Adı</th>
+                            <th>Yorum</th>
+                            <th>Ürün ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(model => model.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.ProductId)
+                                </td>
+
+                             
+
+                                <td>
+                                    @using (Html.BeginForm("DeleteConfirmed", "Comment", new { id = Model.Id }, FormMethod.Post, new { @class = "delete-form" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bu yorumu silmek istediğinizden emin misiniz?')">
+                                            <i class="fa fa-fw fa-trash"></i>Sil
+                                        </button>
+                                    }
+
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.col -->
+</div>

@@ -1,0 +1,35 @@
+﻿@using KitapHayalim.Entity
+@model IEnumerable<Product>
+<div id="carouselBlk">
+    <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="">
+                    <div class="" style="width:100%; height:480px; background-image: url('https://images2.alphacoders.com/261/thumb-1920-26102.jpg')">
+                        <div style="float:left; color:white; margin-left:550px; margin-top:150px; max-width:800px;">
+                            <h1>"Bir Kitapla Yepyeni Bir Dünya"</h1>
+                            <h2> Kitaplarla dolu bir yaşamın keyfini çıkar! Kitap Hayalimde bulacağın kitaplarla her sayfada yeni bir dünyaya adım atacak, kendini kaybedecek ve sonsuz bir bilgi denizinde yüzeceksin!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="item">
+                   <div class="" style="width:100%; height:480px; background-image: url('https://images2.alphacoders.com/261/thumb-1920-26102.jpg')">  
+                       <div style="float:left; color:white; margin-left:350px; margin-top:150px; max-width:800px;">
+                           <h1>"Keşfet ve Yeni Dünyalara Açıl"</h1>
+                           <h2> Kitap Hayalim'nde binlerce kitap arasında kaybolmaya hazır mısın? Tutkunu olduğun türlerden, bilinmeyen yazarlara kadar her şeyi bulabileceğin geniş bir kitap koleksiyonu seni bekliyor!</h2>
+                       </div>
+                       <div style="float:right; margin-right:350px;"><a class="" href="/Home/ProductDetails/@item.Id"><img style="height:400px; min-height:400px; margin-top:25px;" src="~/Content/Images/@item.Image" alt="" /></a></div>
+                   </div>
+             </div>
+            }
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+</div>
+
+
+

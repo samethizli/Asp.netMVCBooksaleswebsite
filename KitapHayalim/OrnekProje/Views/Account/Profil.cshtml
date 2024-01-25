@@ -1,0 +1,62 @@
+﻿@using KitapHayalim.Models
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <div id="mainBody">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar ================================================== -->
+                <div id="sidebar" class="span3">
+                    @Html.Action("Summary", "Cart")
+
+                    <ul id="sideManu" class="nav nav-tabs nav-stacked">
+
+                        @Html.Action("_CategoryList", "Category")
+                    </ul>
+
+                    <br />
+                    @Html.Action("FeaturedProducList", "Home")
+                </div>
+                <!-- Sidebar end=============================================== -->
+                <div class="span9">
+                    <ul class="breadcrumb">
+                        <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+                        <li class="active">Profile</li>
+                    </ul>
+                    <h3> Profil Detay </h3>
+                    <hr class="soft" />
+
+                    <table id="compairTbl" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Ad</th>
+                                <th>Soyad </th>
+                                <th>Kullanıcı Adı</th>
+                                <th>E-Posta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <tr>
+                                    <td>@Model.Ad</td>
+                                    <td>@Model.Soyad</td>
+                                    <td>@Model.Kullanıcıadı</td>
+                                    <td>@Model.Eposta</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

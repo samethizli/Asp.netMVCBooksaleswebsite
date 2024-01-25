@@ -1,0 +1,53 @@
+﻿
+@using KitapHayalim.Models
+@model IEnumerable<ProductModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Action("_Slider", "Home")
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar ================================================== -->
+            <div id="sidebar" class="span3">
+                @Html.Action("Summary","Cart")
+              
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+
+                    @Html.Action("_CategoryList", "Category")
+                </ul>
+
+                <br />
+                @Html.Action("FeaturedProducList", "Home")
+            </div>
+            <!-- Sidebar end=============================================== -->
+            <div class="span9">
+
+                <ul class="thumbnails">
+
+                    @foreach (var item in Model)
+                    {
+                        <li class="span3">
+                            <div class="thumbnail" style="width:270px;height:345px">
+                                <a href="/Home/ProductDetails/@item.Id"><img style="height:180px;" src="~/Content/Images/@item.Image" alt="" /></a>
+                                <div class="caption" style="width:260px; height:140px">
+                                    <h5> <a href="/Home/ProductDetails/@item.Id">@item.Name</a> </h5>
+                                    <p>
+                                        @item.Description
+                                    </p>
+
+                                    <h4 style="text-align:center"> <a class="btn" href="/Home/ProductDetails/@item.Id">Görüntüle... <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary">@item.Price (₺)</a></h4>
+
+                                </div>
+                            </div>
+                        </li>
+                    }
+
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
